@@ -1,0 +1,27 @@
+<%= form_with(model: search_suggestion) do |form| %>
+  <% if search_suggestion.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(search_suggestion.errors.count, "error") %> prohibited this search_suggestion from being saved:</h2>
+
+      <ul>
+        <% search_suggestion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :term, style: "display: block" %>
+    <%= form.text_field :term %>
+  </div>
+
+  <div>
+    <%= form.label :count, style: "display: block" %>
+    <%= form.number_field :count %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

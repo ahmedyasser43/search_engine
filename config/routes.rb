@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :search_suggestions, only: [:index]
+  resources :search_analytics, only: [:index]
+  get "search_engine/search", to: "search_engine#search", as: :search_engine_search
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

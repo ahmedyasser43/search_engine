@@ -1,0 +1,11 @@
+<% content_for :title, "New search suggestion" %>
+
+<h1>New search suggestion</h1>
+
+<%= render "form", search_suggestion: @search_suggestion %>
+
+<br>
+
+<div>
+  <%= link_to "Back to search suggestions", search_suggestions_path %>
+</div>
